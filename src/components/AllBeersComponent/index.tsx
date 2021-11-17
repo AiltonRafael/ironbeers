@@ -1,15 +1,17 @@
 import React from 'react';
 import { NavbarComponent } from '../Navbar/NavbarComponent';
 import { CardAllBeersComponent } from './CardAllBeersComponent';
-import { Grid } from '@chakra-ui/layout';
+import { Grid, Box } from '@chakra-ui/layout';
 
 export const AllBeersComponent: React.FC = () => {
     return (
-        <div>
+        <Box>
             <NavbarComponent />
-            <Grid> 
+            <Grid templateRows='1fr'> 
+                <CardAllBeersComponent />
+                <CardAllBeersComponent />
                 <CardAllBeersComponent />
             </Grid>
-        </div>
+        </Box>
     )
 }
