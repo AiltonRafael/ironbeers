@@ -24,7 +24,7 @@ export const AllBeersComponent: React.FC = () => {
         d={ dataLoaded ? 'inline' : 'flex'}
         flexDirection='column'
         justifyContent='center'
-        alignContent='center'
+        alignItems='center'
         >
             <NavbarComponent />
             <Grid templateRows='1fr'>

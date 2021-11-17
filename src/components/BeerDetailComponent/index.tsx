@@ -25,7 +25,13 @@ export const BeerDetailComponent: React.FC = () => {
 
 
     return (
-        <Box>
+        <Box
+        d={dataLoaded ? 'inline' : 'flex'}
+        flexDirection='column'
+        justifyContent='center'
+        alignItems='center'
+        h={dataLoaded ? '100%' : '100%'}
+        >
             <NavbarComponent />
             {dataLoaded ? 
             <CardBeerDetail 
@@ -38,7 +44,7 @@ export const BeerDetailComponent: React.FC = () => {
                 contributed_by={Object.values(infoBeer)[20]}
             />    
         
-            : <Spinner /> }
+            : <Spinner size='xl'/> }
            
         </Box>
     )
