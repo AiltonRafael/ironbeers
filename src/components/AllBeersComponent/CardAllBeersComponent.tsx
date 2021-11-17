@@ -18,7 +18,7 @@ interface ICardAllBeersCompoonentProps {
 export const CardAllBeersComponent: React.FC<ICardAllBeersCompoonentProps> = (props) => {
 
     return (
-        <Link to={`/${props.link}`}>
+        <Link to={`/beers/${props.link}`}>
             <Box>
                 <Box p='10px'>
                     <Grid

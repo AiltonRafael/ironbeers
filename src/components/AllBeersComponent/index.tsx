@@ -5,9 +5,9 @@ import { Grid,  Box } from '@chakra-ui/layout';
 import axios from 'axios'
 import { Spinner } from '@chakra-ui/spinner';
 
-export const urlApi = 'https://ih-beers-api2.herokuapp.com/beers'
-
 export const AllBeersComponent: React.FC = () => {
+    const urlApi = 'https://ih-beers-api2.herokuapp.com/beers'
+
     const [ infoBeer, setInfoBeer ] = useState({});
     const [ dataLoaded, setDataLoaded ] = useState(false);
     useEffect(() => {
