@@ -1,33 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { NavbarComponent } from '../Navbar/NavbarComponent';
 import { CardAllBeersComponent } from './CardAllBeersComponent';
-import { Grid, Box } from '@chakra-ui/layout';
+import { Grid,  Box } from '@chakra-ui/layout';
 import axios from 'axios'
+import { Spinner } from '@chakra-ui/spinner';
 
 const urlApi = 'https://ih-beers-api2.herokuapp.com/beers'
 
 export const AllBeersComponent: React.FC = () => {
-    const [ infoBeer, setInfoBeer ] = useState([]);
+    const [ infoBeer, setInfoBeer ] = useState({});
     const [ dataLoaded, setDataLoaded ] = useState(false);
-    const [ pageLoaded, setPageLoaded ] = useState(true)
     useEffect(() => {
         axios.get(urlApi)
             .then((response) =>  {
                 setInfoBeer({...response.data})
-                console.log(infoBeer)
                 setDataLoaded(true)
-                setPageLoaded(false)
             })
             .catch((err) => err)
     }, [])
 
     return (
-        <Box>
+        <Box
+        d={ dataLoaded ? 'inline' : 'flex'}
+        flexDirection='column'
+        justifyContent='center'
+        alignContent='center'
+        >
             <NavbarComponent />
-            <Grid templateRows='1fr'> 
-                <CardAllBeersComponent />
-                <CardAllBeersComponent />
-                <CardAllBeersComponent />
+            <Grid templateRows='1fr'>
+                {dataLoaded ? 
+                   Object.values(infoBeer).map((currentData: any) => {
+                    return (
+                        <CardAllBeersComponent
+                        key={currentData['oi']}
+                        image={currentData['image_url']}
+                        name={currentData['name']}
+                        tagline={currentData['tagline']}
+                        contributed_by={currentData['contributed_by']}
+                    />
+                    )
+                })
+                : <Box
+                d='flex'
+                justifyContent='center'
+                alignItems='center'
+                > 
+                    <Spinner size='xl'/> 
+                </Box>}
             </Grid>
         </Box>
     )

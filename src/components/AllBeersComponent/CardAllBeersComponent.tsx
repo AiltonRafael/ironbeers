@@ -1,35 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { 
     Grid, 
     Box,
     Text
 } from '@chakra-ui/layout';
 import { Image } from '@chakra-ui/image';
-import axios from 'axios'
-
-const urlApi = 'https://ih-beers-api2.herokuapp.com/beers'
 
 interface ICardAllBeersCompoonentProps {
     image?: string,
     tagline?: string,
     name?: string,
-    contributed_by: string
+    contributed_by?: string
 }
 
 export const CardAllBeersComponent: React.FC<ICardAllBeersCompoonentProps> = (props) => {
-    const [ infoBeer, setInfoBeer ] = useState([]);
-    const [ dataLoaded, setDataLoaded ] = useState(false);
-    const [ pageLoaded, setPageLoaded ] = useState(true)
-    useEffect(() => {
-        axios.get(urlApi)
-            .then((response) =>  {
-                setInfoBeer({...response.data})
-                console.log(infoBeer)
-                setDataLoaded(true)
-                setPageLoaded(false)
-            })
-            .catch((err) => err)
-    }, [])
 
     return (
         <Box>
@@ -50,8 +34,8 @@ export const CardAllBeersComponent: React.FC<ICardAllBeersCompoonentProps> = (pr
                     p='10px'
                     > 
                         <Image 
-                        src={infoBeer[0][`image_url`]} 
-                        alt={infoBeer[0][`name`]} 
+                        src={props.image} 
+                        alt={props.name} 
                         w='20px'
                         objectFit='cover'
                         />
@@ -62,9 +46,9 @@ export const CardAllBeersComponent: React.FC<ICardAllBeersCompoonentProps> = (pr
                     alignItems='center'
                     justifyContent='center'
                     >
-                        <Text> {infoBeer[0][`name`]} </Text>
-                        <Text> {infoBeer[0][`tagline`]} </Text>
-                        <Text> Created by: {infoBeer[0][`contributed_by`]} </Text>
+                        <Text> {props.name} </Text>
+                        <Text> {props.tagline} </Text>
+                        <Text> Created by: {props.contributed_by} </Text>
                     </Box>
                 </Grid>
             </Box>
