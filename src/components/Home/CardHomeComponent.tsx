@@ -5,16 +5,16 @@ import {
     Image,
     Text
 } from '@chakra-ui/react';
-import { Link } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
-interface IAllBeersComponent {
+interface ICardHomeComponent {
     image: string,
     title: string,
     description: string
     link: string
 }
 
-export const AllBeersComponent: React.FC<IAllBeersComponent> = (props) => {
+export const CardHomeComponent: React.FC<ICardHomeComponent> = (props) => {
     return (
         <Link to={props.link}>
             <Box>

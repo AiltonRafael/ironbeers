@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Grid } from '@chakra-ui/layout';
-import { Link } from '@chakra-ui/layout';
+import { Link } from 'react-router-dom';
 
 export const NavbarComponent: React.FC = () => {
     return (

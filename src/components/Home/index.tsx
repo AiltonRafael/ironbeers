@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Grid } from '@chakra-ui/react'
-import { AllBeersComponent } from './AllBeersComponent';
+import { CardHomeComponent } from './CardHomeComponent';
 import allBeersImg from '../../assets/images/beers.png';
 import randomBeerImg from '../../assets/images/random-beer.png'
 import newBeerImg from '../../assets/images/new-beer.png'
@@ -10,7 +10,7 @@ export const HomeComponent: React.FC = () => {
     return (
         <Box h='100vh'>
             <Grid templateRows='1fr 1fr 1fr'>
-                <AllBeersComponent 
+                <CardHomeComponent 
                 image={allBeersImg}
                 title='All Beers'
                 link='/beers'
@@ -18,7 +18,7 @@ export const HomeComponent: React.FC = () => {
                     Praesent sed interdum dui. Nam sit amet massa libero. 
                     Aenean semper vel elit vel varius.'
                 />
-                 <AllBeersComponent 
+                 <CardHomeComponent 
                 image={randomBeerImg}
                 title='Random Beer'
                 link='/random-beer'
@@ -27,7 +27,7 @@ export const HomeComponent: React.FC = () => {
                     Aenean semper vel elit vel varius.'
                 />
                 
-                <AllBeersComponent 
+                <CardHomeComponent 
                 image={newBeerImg}
                 title='Bew Beer'
                 link='/new-beer'
