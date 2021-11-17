@@ -5,12 +5,18 @@ import {
     Text
 } from '@chakra-ui/layout';
 import { Image } from '@chakra-ui/image';
-import logo from '../../assets/images/beers.png';
 import axios from 'axios'
 
 const urlApi = 'https://ih-beers-api2.herokuapp.com/beers'
 
-export const CardAllBeersComponent: React.FC = () => {
+interface ICardAllBeersCompoonentProps {
+    image?: string,
+    tagline?: string,
+    name?: string,
+    contributed_by: string
+}
+
+export const CardAllBeersComponent: React.FC<ICardAllBeersCompoonentProps> = (props) => {
     const [ infoBeer, setInfoBeer ] = useState([]);
     const [ dataLoaded, setDataLoaded ] = useState(false);
     const [ pageLoaded, setPageLoaded ] = useState(true)
@@ -27,7 +33,6 @@ export const CardAllBeersComponent: React.FC = () => {
 
     return (
         <Box>
-            {dataLoaded ? 
             <Box p='10px'>
                 <Grid
                 border='1px'
@@ -62,7 +67,7 @@ export const CardAllBeersComponent: React.FC = () => {
                         <Text> Created by: {infoBeer[0][`contributed_by`]} </Text>
                     </Box>
                 </Grid>
-            </Box> : null}
+            </Box>
         </Box> 
            
     )
