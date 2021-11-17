@@ -46,9 +46,11 @@ export const CardAllBeersComponent: React.FC<ICardAllBeersCompoonentProps> = (pr
                     alignItems='center'
                     justifyContent='center'
                     >
-                        <Text> {props.name} </Text>
-                        <Text> {props.tagline} </Text>
-                        <Text> Created by: {props.contributed_by} </Text>
+                        <Text textAlign='center'> {props.name} </Text>
+                        <Text textAlign='center'> {props.tagline} </Text>
+                        <Text textAlign='center'> 
+                            Created by: {props.contributed_by?.split(' ', 2).join(' ')} 
+                        </Text>
                     </Box>
                 </Grid>
             </Box>
