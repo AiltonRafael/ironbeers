@@ -6,7 +6,7 @@ import randomBeerImg from '../../assets/images/random-beer.png'
 import newBeerImg from '../../assets/images/new-beer.png'
 
 
-export const HomeComponent: React.FC = () => {
+export const HomeComponent = () => {
     return (
         <Box h='100vh'>
             <Box 

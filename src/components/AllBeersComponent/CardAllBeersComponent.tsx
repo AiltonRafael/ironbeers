@@ -15,7 +15,7 @@ interface ICardAllBeersCompoonentProps {
     link: string
 }
 
-export const CardAllBeersComponent: React.FC<ICardAllBeersCompoonentProps> = (props) => {
+export const CardAllBeersComponent = (props: ICardAllBeersCompoonentProps) => {
 
     return (
         <Link to={`/beers/${props.link}`}>

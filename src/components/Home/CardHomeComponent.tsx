@@ -14,7 +14,7 @@ interface ICardHomeComponent {
     link: string
 }
 
-export const CardHomeComponent: React.FC<ICardHomeComponent> = (props) => {
+export const CardHomeComponent = (props: ICardHomeComponent) => {
     return (
         <Link to={props.link}>
             <Box>

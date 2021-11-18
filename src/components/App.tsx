@@ -7,7 +7,7 @@ import { BeerDetailComponent } from './BeerDetailComponent';
 import { RandomComponent } from './RandomBeerComponent';
 import { NewBeerFormComponent } from './NewBeerForm/index';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Box>
       <Routes>

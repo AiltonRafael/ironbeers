@@ -16,7 +16,7 @@ interface ICardBeerDetail {
     first_brewed?: any
 }
 
-export const CardBeerDetail: React.FC<ICardBeerDetail> = (props) => {
+export const CardBeerDetail = (props: ICardBeerDetail) => {
     return (
         <Grid 
         h='100vh'

@@ -7,7 +7,7 @@ import { Spinner } from '@chakra-ui/spinner';
 import { Box } from '@chakra-ui/layout';
 
 
-export const BeerDetailComponent: React.FC = () => {
+export const BeerDetailComponent = () => {
     let { id } = useParams()
     const urlApi = `https://ih-beers-api2.herokuapp.com/beers/${id}`
 
