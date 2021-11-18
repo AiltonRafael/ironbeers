@@ -10,13 +10,13 @@ import { Box } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
 
 interface IformDataProps{
-    name?: any,
-    firstName?: string,
-    lastName?: string
-    tagline?: string,
-    description?: string,
-    first_brewed?: string,
-    brewers_tips?: string,
+    name: any,
+    firstName: string,
+    lastName: string
+    tagline: string,
+    description: string,
+    first_brewed: string,
+    brewers_tips: string,
     attenuation_level: number,
     contributed_by: string
 }
