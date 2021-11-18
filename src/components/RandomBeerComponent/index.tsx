@@ -4,7 +4,7 @@ import { NavbarComponent } from '../Navbar/NavbarComponent';
 import axios from 'axios';
 import { Spinner } from '@chakra-ui/spinner';
 
-export const RandomComponent = () => {
+export const RandomComponent: React.FC = () => {
     const [dataInfo, setDataInfo] = useState<any>({});
     const [loading, setLoading] = useState(false)
 

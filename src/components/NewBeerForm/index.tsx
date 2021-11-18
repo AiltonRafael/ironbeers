@@ -21,7 +21,7 @@ interface IformDataProps{
     contributed_by: string
 }
 
-export const NewBeerFormComponent = () => {
+export const NewBeerFormComponent: React.FC = () => {
     const [formData, setFromData] = useState<IformDataProps>({
         name: '',
         firstName: '',
