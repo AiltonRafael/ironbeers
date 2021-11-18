@@ -22,7 +22,11 @@ export const CardHomeComponent: React.FC<ICardHomeComponent> = (props) => {
                 templatRows='4fr 1fr'
                 >
                     <Box boxShadow='0px 5px 10px 0px grey'>
-                        <Image src={props.image} alt='All Beers' />
+                        <Image 
+                        w='100%'
+                        src={props.image} 
+                        alt='All Beers'
+                        />
                     </Box>
                     <Box p='10px'>
                         <Text> 

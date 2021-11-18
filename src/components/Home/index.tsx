@@ -9,8 +9,13 @@ import newBeerImg from '../../assets/images/new-beer.png'
 export const HomeComponent: React.FC = () => {
     return (
         <Box h='100vh'>
-            <Grid templateRows='1fr 1fr 1fr'>
-                <CardHomeComponent 
+            <Box 
+            d={['grid', 'grid', 'flex', 'flex']}
+            alignItems='center'
+            flexDir={['column', 'column', 'column', 'column']}
+            templateRows='1fr 1fr 1fr'
+            >
+                <CardHomeComponent
                 image={allBeersImg}
                 title='All Beers'
                 link='/beers'
@@ -36,7 +41,7 @@ export const HomeComponent: React.FC = () => {
                     Aenean semper vel elit vel varius.'
                 />
        
-            </Grid>
+            </Box>
         </Box>
     )
 }
