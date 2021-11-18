@@ -10,7 +10,7 @@ import { Box } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
 
 interface IformDataProps{
-    name?: string,
+    name?: any,
     firstName?: string,
     lastName?: string
     tagline?: string,
@@ -23,6 +23,7 @@ interface IformDataProps{
 
 export const NewBeerFormComponent = () => {
     const [formData, setFromData] = useState<IformDataProps>({
+        name: '',
         firstName: '',
         lastName: '',
         tagline: '',
@@ -35,13 +36,10 @@ export const NewBeerFormComponent = () => {
 
     function handleSubmit(event: any){
         event.preventDefault()
-        axios.post('https://ih-beers-api2.herokuapp.com/beers/new', {
-            formData
-        })
+        axios.post('https://ih-beers-api2.herokuapp.com/beers/new', 
+        setFromData({...formData, [formData.name]: `${formData.firstName} ${formData.lastName}`}))
         .then((response) => console.log(response))
         .catch((err) => console.log(err))
-
-        console.log(formData)
     }
 
     function handleValue(event: any){
