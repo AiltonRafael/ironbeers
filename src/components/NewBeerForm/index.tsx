@@ -44,7 +44,6 @@ export const NewBeerFormComponent: React.FC = () => {
 
     function handleValue(event: any){
         setFromData({...formData, [event.target.name]:event.target.value})
-        console.log(event.target.name)
     }
 
     return (
