@@ -7,11 +7,15 @@
         "image": "https://cdn2.bulbagarden.net/upload/d/dc/Black_EN_boxart.png",
         "avatar": "https://avatars.githubusercontent.com/u/88546563?v=4", 
         "likes": {
-            "count": 100,
+            "count": 30,
             "users": [
                 {"name": "Kity"},
                 {"name": "Andrew"},
                 {"name": "Paul"},
+                {"name": "Mary"},
+                {"name": "Luc"},
+                {"name": "Mary"},
+                {"name": "Luc"},
                 {"name": "Mary"},
                 {"name": "Luc"}
             ]
@@ -30,16 +34,18 @@
         "image": "https://images.unsplash.com/photo-1615789591457-74a63395c990?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9tZXN0aWMlMjBjYXR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
         "avatar": "https://www.github.com/manofgpa.png", 
         "likes": {
-            "count": 100,
+            "count": 20,
             "users": [
                 {"name": "Kity"},
                 {"name": "Andrew"},
                 {"name": "Paul"},
                 {"name": "Mary"},
+                {"name": "Luc"},
+                {"name": "Mary"},
                 {"name": "Luc"}
             ]
         },
-        "timestamp": "4 hours",
+        "timestamp": "2 hours",
         "github": "",
         "linkedin": "",
         "tags": ["funny", "mark", "lol"]
@@ -53,7 +59,7 @@
         "image": "https://en.yeeply.com/wp-content/uploads/2017/05/web_security_online_lock.jpg",
         "avatar": "https://blog.zaig.com.br/wp-content/uploads/2020/11/zaig-yoast.png", 
         "likes": {
-            "count": 100,
+            "count": 30,
             "users": [
                 {"name": "Kity"},
                 {"name": "Andrew"},
@@ -62,7 +68,7 @@
                 {"name": "Luc"}
             ]
         },
-        "timestamp": "4 hours",
+        "timestamp": "10 hours",
         "github": "",
         "linkedin": "",
         "tags": ["newInfo", "dataBase", "relationship"]
