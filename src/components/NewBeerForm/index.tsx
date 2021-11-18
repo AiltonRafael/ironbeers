@@ -10,12 +10,13 @@ import { Box } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
 
 interface IformDataProps{
+    name?: string,
     firstName?: string,
     lastName?: string
     tagline?: string,
     description?: string,
     first_brewed?: string,
-    brewrs_tips?: string,
+    brewers_tips?: string,
     attenuation_level: number,
     contributed_by: string
 }
@@ -27,21 +28,19 @@ export const NewBeerFormComponent = () => {
         tagline: '',
         description: '',
         first_brewed: '',
-        brewrs_tips: '',
+        brewers_tips: '',
         attenuation_level: 0,
         contributed_by: ''
     })
 
-    useEffect(() => {
+    function handleSubmit(event: any){
+        event.preventDefault()
         axios.post('https://ih-beers-api2.herokuapp.com/beers/new', {
             formData
         })
         .then((response) => console.log(response))
         .catch((err) => console.log(err))
-    }, [])
 
-    function handleSubmit(event: any){
-        event.preventDefault()
         console.log(formData)
     }
 
@@ -70,28 +69,28 @@ export const NewBeerFormComponent = () => {
                 id="first-name"
                 isRequired>
                     <FormLabel>First name</FormLabel>
-                    <Input name='firstName' placeholder="First name" onChange={handleValue}/>
+                    <Input type='text' name='name.firstName' placeholder="First name" onChange={handleValue}/>
 
                     <FormLabel>Last name</FormLabel>
-                    <Input name='lastName' placeholder="Last name" onChange={handleValue}/>
+                    <Input type='text' name='name.lastName' placeholder="Last name" onChange={handleValue}/>
 
                     <FormLabel>Tagline</FormLabel>
-                    <Input name='tagline' placeholder="Tagline" onChange={handleValue}/>
+                    <Input type='text' name='tagline' placeholder="Tagline" onChange={handleValue}/>
 
                     <FormLabel>Description</FormLabel>
-                    <Input name='description' placeholder="Description" onChange={handleValue}/>
+                    <Input type='text' name='description' placeholder="Description" onChange={handleValue}/>
 
                     <FormLabel>First Brewed</FormLabel>
-                    <Input name='first_brewed' placeholder="First Brewed" onChange={handleValue}/>
+                    <Input type='text' name='first_brewed' placeholder="First Brewed" onChange={handleValue}/>
 
                     <FormLabel>Brewers Tips</FormLabel>
-                    <Input name='brewrs_tips' placeholder="Brewers Tips" onChange={handleValue}/>
+                    <Input type='text' name='brewers_tips' placeholder="Brewers Tips" onChange={handleValue}/>
 
                     <FormLabel>Attenuation Level</FormLabel>
                     <Input type='number' name='attenuation_level' placeholder="Attenuation Level" onChange={handleValue}/>
 
                     <FormLabel>Contributed By</FormLabel>
-                    <Input name='contributed_by' placeholder="Contributed By" onChange={handleValue}/>
+                    <Input type='text' name='contributed_by' placeholder="Contributed By" onChange={handleValue}/>
 
                     <Box
                     d='flex'
