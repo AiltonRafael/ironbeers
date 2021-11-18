@@ -9,7 +9,6 @@ import { Box } from '@chakra-ui/layout';
 
 export const BeerDetailComponent: React.FC = () => {
     let { id } = useParams()
-    console.log(id)
     const urlApi = `https://ih-beers-api2.herokuapp.com/beers/${id}`
 
     const [ infoBeer, setInfoBeer ] = useState({});
