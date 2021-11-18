@@ -11,8 +11,6 @@ import { Button } from '@chakra-ui/button';
 
 interface IformDataProps{
     name: any,
-    firstName: string,
-    lastName: string
     tagline: string,
     description: string,
     first_brewed: string,
@@ -24,8 +22,6 @@ interface IformDataProps{
 export const NewBeerFormComponent = () => {
     const [formData, setFromData] = useState<IformDataProps>({
         name: '',
-        firstName: '',
-        lastName: '',
         tagline: '',
         description: '',
         first_brewed: '',
@@ -36,8 +32,7 @@ export const NewBeerFormComponent = () => {
 
     function handleSubmit(event: any){
         event.preventDefault()
-        axios.post('https://ih-beers-api2.herokuapp.com/beers/new', 
-        setFromData({...formData, [formData.name]: `${formData.firstName} ${formData.lastName}`}))
+        axios.post('https://ih-beers-api2.herokuapp.com/beers/new', formData)
         .then((response) => console.log(response))
         .catch((err) => console.log(err))
     }
@@ -65,29 +60,63 @@ export const NewBeerFormComponent = () => {
                 p='30px'
                 id="first-name"
                 isRequired>
-                    <FormLabel>First name</FormLabel>
-                    <Input type='text' name='name.firstName' placeholder="First name" onChange={handleValue}/>
-
-                    <FormLabel>Last name</FormLabel>
-                    <Input type='text' name='name.lastName' placeholder="Last name" onChange={handleValue}/>
+                    <FormLabel>Name</FormLabel>
+                    <Input 
+                    type='text' 
+                    name='name' 
+                    placeholder="First name"
+                    value={formData.name}
+                    onChange={handleValue}/>
 
                     <FormLabel>Tagline</FormLabel>
-                    <Input type='text' name='tagline' placeholder="Tagline" onChange={handleValue}/>
+                    <Input 
+                    type='text' 
+                    name='tagline' 
+                    placeholder="Tagline" 
+                    value={formData.tagline}
+                    onChange={handleValue}/>
 
                     <FormLabel>Description</FormLabel>
-                    <Input type='text' name='description' placeholder="Description" onChange={handleValue}/>
+                    <Input 
+                    type='text' 
+                    name='description' 
+                    placeholder="Description" 
+                    onChange={handleValue}
+                    value={formData.description}
+                    />
 
                     <FormLabel>First Brewed</FormLabel>
-                    <Input type='text' name='first_brewed' placeholder="First Brewed" onChange={handleValue}/>
+                    <Input 
+                    type='text' 
+                    name='first_brewed' 
+                    placeholder="First Brewed" 
+                    onChange={handleValue}
+                    value={formData.first_brewed}
+                    />
 
                     <FormLabel>Brewers Tips</FormLabel>
-                    <Input type='text' name='brewers_tips' placeholder="Brewers Tips" onChange={handleValue}/>
+                    <Input 
+                    type='text' 
+                    name='brewers_tips' 
+                    placeholder="Brewers Tips" 
+                    value={formData.brewers_tips}
+                    onChange={handleValue}/>
 
                     <FormLabel>Attenuation Level</FormLabel>
-                    <Input type='number' name='attenuation_level' placeholder="Attenuation Level" onChange={handleValue}/>
+                    <Input 
+                    type='number' 
+                    name='attenuation_level' 
+                    placeholder="Attenuation Level" 
+                    value={formData.attenuation_level}
+                    onChange={handleValue}/>
 
                     <FormLabel>Contributed By</FormLabel>
-                    <Input type='text' name='contributed_by' placeholder="Contributed By" onChange={handleValue}/>
+                    <Input 
+                    type='text' 
+                    name='contributed_by' 
+                    placeholder="Contributed By" 
+                    value={formData.contributed_by}
+                    onChange={handleValue}/>
 
                     <Box
                     d='flex'
