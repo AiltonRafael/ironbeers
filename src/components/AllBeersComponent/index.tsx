@@ -32,7 +32,7 @@ export const AllBeersComponent: React.FC = () => {
                    Object.values(infoBeer).map((currentData: any) => {
                     return (
                         <CardAllBeersComponent
-                        key={currentData['oi']}
+                        key={currentData['_id']}
                         image={currentData['image_url']}
                         name={currentData['name']}
                         tagline={currentData['tagline']}
